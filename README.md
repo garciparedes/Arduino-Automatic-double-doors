@@ -2,6 +2,8 @@ Automatic-double-doors
 ======================
 
 Arduino project to control two doors
+Source code at `/Automatic_double_doors/Automatic_double_doors.ino`
+
 
 ###Description
 
