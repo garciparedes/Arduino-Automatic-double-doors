@@ -14,6 +14,9 @@ In construction...
 ###Components required
 * 1 x Arduino Uno R3
 * 7 x Relay 5v / AC 250V/10A
+* 2 x Phase AC Motors to move de doors
+* 1 x Electric Lock
+* 1 x Station and wireless controllers
 * 3 x Buttons
 * 1 x Motion Sensor
 * 4 x Limit Buttons
