@@ -2,7 +2,10 @@
 Automatic Double Doors system.
  Designed for Arduino Uno R3
  Created by Sergio García Prado & Juan Carlos García.
- 
+
+ //For that the doors close properly, there should be a small delay each other, both opening to close
+
+
  The Circuit:
  
  1 x Arduino Uno R3
@@ -151,11 +154,11 @@ void openLock (){
   
   digitalWrite(relayClose2, HIGH);
   
-  delay();
+  delay(0);
   
   digitalWrite(relayLock, HIGH);
   
-  delay();
+  delay(0);
   
   digitalWrite(relayClose1, LOW);
   
@@ -188,7 +191,7 @@ void openDoors(){
 
     if (digitalRead(limitOpen2) == HIGH){
     
-      digitalWrite(relayOpen1, LOW);
+      digitalWrite(relayOpen2, LOW);
     }   
   }
   while(checkOpenClose(limitOpen1,limitOpen2) == false);
@@ -204,17 +207,34 @@ void openDoors(){
 
 void closeDoors(){
 
-  //**********************************************************
-  //*                 UNCOMPLETE METHOD                      *
-  //**********************************************************
+  moving = true;
+    
+  digitalWrite(relayClose2, HIGH);
+
+  delay(delayDoor);
+  
+  digitalWrite(relayClose1, HIGH);
 
   do{
 
-      moving = true;
-
+    if (digitalRead(limitClose2) == HIGH){
+    
+      digitalWrite(relayClose2, LOW);
+    
     }
 
-    while(checkOpenClose(limitClose1,limitClose2) == false);
+    if (digitalRead(limitClose1) == HIGH){
+    
+      digitalWrite(relayClose1, LOW);
+    }   
+  }
+  while(checkOpenClose(limitClose1,limitClose2) == false);
+
+  digitalWrite(relayClose1, LOW);
+
+  digitalWrite(relayClose2, LOW);
+
+  moving = false;
 
 }
 
