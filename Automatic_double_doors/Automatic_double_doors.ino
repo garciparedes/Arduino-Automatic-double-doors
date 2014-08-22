@@ -54,8 +54,8 @@ int relaySignaling1 = 7;
 //Variables
 //*********************************************************************
 
-int timeUnlock = 3000;  
-int timeOpenLock = 5000;
+int timeUnlock = 2000;  
+int timeOpenLock = 4000;
 int delayDoor = 5000;
 
 boolean moving = false;
@@ -93,7 +93,7 @@ void setup() {
 
 boolean checkOpenClose(int limit1, int limit2){
  
-  if ( (digitalRead(limit1) == LOW) && (digitalRead(limit2) == LOW)){
+  if ( (digitalRead(limit1) == HIGH) && (digitalRead(limit2) == HIGH)){
  
     return true;
  
@@ -125,11 +125,23 @@ boolean pressButton(int button, int remote){
 }
 
 
-boolean checkMoving(){
+boolean checkMoving(limit1, limit2, limit3, limit4){
   
   //**********************************************************
   //*                 UNCOMPLETE METHOD                      *
   //**********************************************************
+
+  if ((digitalRead(limit1) == LOW) && (digitalRead(limit2) == LOW) && (digitalRead(limit3) == LOW) && (digitalRead(limit4) == LOW)){
+
+    return true;
+
+  } 
+
+  else {
+
+    return false;
+
+  }
 
 }
 
@@ -145,20 +157,16 @@ boolean checkEmergency(){
 
 void openLock (){
 
-  //**********************************************************
-  //*                 UNCOMPLETE METHOD                      *
-  //**********************************************************
-
   //To open the door it's necessary unlock the lock
   digitalWrite(relayClose1, HIGH);
   
   digitalWrite(relayClose2, HIGH);
   
-  delay(0);
+  delay(timeUnlock);
   
   digitalWrite(relayLock, HIGH);
   
-  delay(0);
+  delay(timeOpenLock);
   
   digitalWrite(relayClose1, LOW);
   
