@@ -1,0 +1,13 @@
+Este proyecto consiste en crear un autómata a través de un Arduino que sea capaz de controlar un sistema de puertas automaticas de doble hoja. 
+
+Lo primero que hace antes de abrir las puertas es desbloquear la cerradura, empujando las puertas hacia el sentido contrario y abriendo la cerradura. Una de las hojas se debe de abrir antes que la otra para que no haya problemas.
+
+El sistema de cierre es similar al de apertura, en este caso la puerta que empezó primero el movimiento de apertura tiene que empezarlo después para que se cierre correctamente. Para el cierre no se debe activar la cerradura.
+
+Las puertas terminan el movimiento cuando se llega a sus respectivos finales de carrera, tanto en la apertura, como en el cierre
+
+Si se pulsa una vez el botón con las puertas en estado de reposo (abiertas o cerradas) se inicia el movimiento. En el caso de pulsar otra vez el boton estas se detienen por un tiempo determinado y en el caso de que no haya obstaculos cuando este tiempo se agote continuan el movimiento normal.
+
+Si mientras se estan moviendo se pulsa el botón dos veces, el sistema realizará el movimiento contrario al actual.
+
+Además el sistema incorpora una salida para añadir otras funciones, como por ejemplo, encender las luces del garaje en el caso de que no haya luz suficiente.
