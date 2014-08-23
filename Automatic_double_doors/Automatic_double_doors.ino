@@ -93,34 +93,18 @@ void setup() {
 
 boolean checkOpenClose(int limit1, int limit2){
  
-  if ( (digitalRead(limit1) == HIGH) && (digitalRead(limit2) == HIGH)){
+  if ( (digitalRead(limit1) == HIGH) && (digitalRead(limit2) == HIGH)){ return true; }
  
-    return true;
- 
-  }
- 
-  else{
- 
-    return false;
- 
-  }
+  else{ return false; }
     
 }
 
 
 boolean pressButton(int button, int remote){
 
-  if ( (digitalRead(button) == HIGH) || (digitalRead(remote) == HIGH)){
+  if ( (digitalRead(button) == HIGH) || (digitalRead(remote) == HIGH)){ return true; }
 
-    return true;
-
-  }
-
-  else{
-
-    return false;
-
-  }
+  else{return false;}
     
 }
 
@@ -131,17 +115,9 @@ boolean checkMoving(limit1, limit2, limit3, limit4){
   //*                 UNCOMPLETE METHOD                      *
   //**********************************************************
 
-  if ((digitalRead(limit1) == LOW) && (digitalRead(limit2) == LOW) && (digitalRead(limit3) == LOW) && (digitalRead(limit4) == LOW)){
+  if ((digitalRead(limit1) == LOW) && (digitalRead(limit2) == LOW) && (digitalRead(limit3) == LOW) && (digitalRead(limit4) == LOW)){return true; } 
 
-    return true;
-
-  } 
-
-  else {
-
-    return false;
-
-  }
+  else { return false; }
 
 }
 
